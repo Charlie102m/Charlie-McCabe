@@ -70,7 +70,7 @@ p {
     text-align: right;
 }
 
-#footer {
+#aboutme {
     background: #45a29e;
     color: #1F2833;
     padding: 20px;
@@ -86,4 +86,7 @@ p {
 }
 .spacer {
     height: 20px;
+}
+strong {
+    text-transform: uppercase;
 }
