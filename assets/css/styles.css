@@ -5,6 +5,9 @@ body {
     padding: 0;
     position: relative;
 }
+a {
+    color: inherit;
+}
 
 #profile-img {
     height: 358px;
@@ -45,7 +48,7 @@ body {
     padding: 35px 0;
 }
 
-i {
+#icons-ctn i {
     font-size: 10em;
     margin: 0 30px;
     color: #45a29e;
@@ -66,6 +69,7 @@ i {
 p {
     text-align: justify;
 }
+
 .right-ctn h3 {
     text-align: right;
 }
@@ -80,17 +84,51 @@ p {
     height: 300px;
     margin: 0 auto;
 }
+
 .content-center, .content-center * {
     text-align: center;
-
 }
+
 .spacer {
     height: 20px;
 }
+
 strong {
     text-transform: uppercase;
 }
+
 .carousel {
-    position: relative;
-    top: 80px;
+    padding-top: 80px;
+}
+
+.footer {
+    height: 100px;
+    padding: 20px;
+}
+
+.ft-text *:hover, .ft-icons *:hover {
+    color: #45a29e;
+}
+
+.ft-text {
+    float: left;
+}
+
+.ft-icons {
+    font-size: 3em;
+    margin: 5px;
+    text-align: right;
+}
+.modal-content {
+    background-color: #1F2833;
+    color: #66fcf1;
+}
+.close {
+    color: #66fcf1;
+    text-shadow: none;
+}
+.close:hover {
+    color: #66fcf1;
+    text-shadow: 0 0 8px white;
+
 }
