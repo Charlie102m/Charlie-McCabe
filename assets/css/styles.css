@@ -90,3 +90,7 @@ p {
 strong {
     text-transform: uppercase;
 }
+.carousel {
+    position: relative;
+    top: 80px;
+}
