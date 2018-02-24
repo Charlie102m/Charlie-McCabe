@@ -5,36 +5,81 @@ body {
     padding: 0;
     position: relative;
 }
+
+/* generic para text alignment */
+
+p {
+    text-align: justify;
+}
+
+/* remove default blue fort for links */
+
 a {
     color: inherit;
 }
 
-#profile-img {
-    height: 358px;
+/* capitalise bold text */
+
+strong {
+    text-transform: uppercase;
 }
+
+/* generic link hover state */
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* navbar formatting */
 
 .navbar {
     background-color: #1F2833;
 }
 
+/* nav-items */
+
 .nav-item {
     padding: 0 10px;
 }
 
-.btn {
+/* generic button formatting - contactBtn id req. due to specificity issue with anchor without href - browser default */
+
+.btn, #contactBtn {
     color: #1F2833;
     background: #66fcf1;
     border: none;
-    box-shadow: 3px 3px 8px black;
+    box-shadow: 0 1px 8px #C5C6C7;
     outline: none;
     font-weight: bold;
 }
 
-.btn:hover {
+/* generic button hover state - contactBtn id req. due to specificity issue with anchor without href - browser default */
+
+.btn:hover, #contactBtn:hover {
     background: #66fcf1;
+    color: white;
     border: none;
     box-shadow: none;
 }
+
+/* secondary button formatting */
+
+.btn-sec {
+    color: #C5C6C7;
+    background: none;
+    box-shadow: none;
+}
+
+/* hover state for secondary button */
+
+.btn-sec:hover {
+    color: white;
+    background: none;
+    box-shadow: none;
+}
+
+/* jumbotron formatting */
 
 .jumbotron {
     margin-top: 55px;
@@ -44,9 +89,113 @@ a {
     background: #C5C6C7;
 }
 
+/* jumbotron text formatting */
+
 .jumbo-txt {
     padding: 35px 0;
 }
+
+/* right align My Skills heading */
+
+.right-ctn h3 {
+    text-align: right;
+}
+
+/* container for centered text */
+
+.content-center, .content-center * {
+    text-align: center;
+}
+
+/* spacer where padding/margin not practical */
+
+.spacer {
+    height: 20px;
+}
+
+/* image carousel */
+
+.carousel {
+    padding-top: 80px;
+}
+
+/* carousel image uniform formatting */
+
+.slide-img {
+    height: 300px;
+    margin: 0 auto;
+}
+
+/* footer container */
+
+.footer {
+    height: 100px;
+    padding: 20px;
+}
+
+/* hover state for footer links */
+
+.ft-text *:hover, .ft-icons *:hover {
+    color: #45a29e;
+}
+
+/* footer text */
+
+.ft-text {
+    float: left;
+}
+
+/* footer icons */
+
+.ft-icons {
+    font-size: 3em;
+    margin: 5px;
+    text-align: right;
+}
+
+/* generic modal formatting */
+
+.modal-content {
+    background-color: #1F2833;
+    color: #66fcf1;
+}
+
+/* close modal icon */
+
+.close {
+    color: #66fcf1;
+    text-shadow: none;
+}
+
+/* hover state for close modal icon */
+
+.close:hover {
+    color: #66fcf1;
+    text-shadow: 0 0 8px white;
+}
+
+/* profile pic within jumbotron */
+
+#profile-img {
+    height: 358px;
+}
+
+/* icons container for My Skills section */
+
+#icons-ctn {
+    text-align: center;
+    vertical-align: top;
+}
+
+/* code icon formatting */
+
+#code-icon {
+    text-align: left;
+    margin: 0;
+    font-size: 3em;
+}
+
+/* icon formatting My Skills section */
 
 #icons-ctn i {
     font-size: 10em;
@@ -55,80 +204,10 @@ a {
     text-align: center;
 }
 
-#code {
-    text-align: left;
-    margin: 0;
-    font-size: 3em;
-}
-
-#icons-ctn {
-    text-align: center;
-    vertical-align: top;
-}
-
-p {
-    text-align: justify;
-}
-
-.right-ctn h3 {
-    text-align: right;
-}
+/* container formatting About Me section */
 
 #aboutme {
     background: #45a29e;
     color: #1F2833;
     padding: 20px;
-}
-
-.slide-img {
-    height: 300px;
-    margin: 0 auto;
-}
-
-.content-center, .content-center * {
-    text-align: center;
-}
-
-.spacer {
-    height: 20px;
-}
-
-strong {
-    text-transform: uppercase;
-}
-
-.carousel {
-    padding-top: 80px;
-}
-
-.footer {
-    height: 100px;
-    padding: 20px;
-}
-
-.ft-text *:hover, .ft-icons *:hover {
-    color: #45a29e;
-}
-
-.ft-text {
-    float: left;
-}
-
-.ft-icons {
-    font-size: 3em;
-    margin: 5px;
-    text-align: right;
-}
-.modal-content {
-    background-color: #1F2833;
-    color: #66fcf1;
-}
-.close {
-    color: #66fcf1;
-    text-shadow: none;
-}
-.close:hover {
-    color: #66fcf1;
-    text-shadow: 0 0 8px white;
-
 }

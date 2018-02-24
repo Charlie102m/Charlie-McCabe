@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Charlie McCabe | Aspiring Developer, Lifetime Learner</title>
+
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
@@ -25,19 +26,21 @@
             <a class="navbar-brand" href="#">
                 Charlie McCabe
             </a>
-            <a href="index.html" download>View My Code!</a>
+            <!-- data-toggler for mobile site -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <!-- visible content of data-toggler -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <!-- link to portfolio page -->
                     <li class="nav-item">
                         <a class="btn btn-primary" href="#">Portfolio</a>
                     </li>
+                    <!-- contact modal form submission -->
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="#">Contact</a>
+                        <a id="contactBtn" class="btn btn-primary" data-toggle="modal" data-target="#contact-modal">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -57,6 +60,7 @@
                         <hr class="my-4">
                         <p class="font-weight-bold">Be sure to check out my portfolio!</p>
                         <div class="content-center">
+                            <!-- link to portfolio page -->
                             <a class="btn btn-primary btn-lg" href="#" role="button">Portfolio</a>
                         </div>
                     </div>
@@ -70,10 +74,13 @@
     <!-- My Skills Section -->
     <div class="container">
         <h2 class="display-3">Thanks for stopping by my site!</h2>
-        <i id="code" class="fas fa-code"></i>
+        <!-- small code icon -->
+        <i id="code-icon" class="fas fa-code"></i>
         <div class="row">
             <div id="icons-ctn" class="col-md-7">
+                <!-- break for formatting -->
                 <br>
+                <!-- html, css, js, php & node icons -->
                 <i class="fab fa-html5"></i>
                 <i class="fab fa-css3-alt"></i>
                 <i class="fab fa-js-square"></i>
@@ -94,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <p class="">With my last project now complete, I am determined to move away from my project management role and into the shoes
+        <p>With my last project now complete, I am determined to move away from my project management role and into the shoes
             of a web-developer, with a company who are keen to invest their time in
             <strong>passionate people with a willingness to learn!</strong>
         </p>
@@ -104,6 +111,7 @@
         </p>
         <div class="content-center">
             <p>If you havent done so already, check out my portfolio here!</p>
+            <!-- link to portfolio page -->
             <a class="btn btn-primary btn-lg" href="#" role="button">Portfolio</a>
         </div>
         <div class="spacer"></div>
@@ -113,6 +121,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
+                    <!-- text content - left collumn -->
                     <h3 class="display-4">About Me</h3>
                     <p>I did not pursue a degree when I reached school leaving age, instead opting the enter the world of work.</p>
                     <p>I have held numerous, varied roles throughout my working life - from hospitality, to sales, business
@@ -122,11 +131,12 @@
                         <strong>photoshop</strong>, editing &amp; assembling marketing videos in
                         <strong>premiere pro</strong> and becoming the go to person for all the office's
                         <strong>excel</strong> needs!</p>
-                    <p>I am proud to be my own teacher and student, never allowing a problem to go unresolved.</p>
                     <p>When I am not working or studying, I enjoy long walks with my two border collies, playing guitar and
                         building desktop computers.</p>
                 </div>
+                <!-- carousel images - right collumn -->
                 <div class="col-md-5">
+                    <!-- bootstrap default -->
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -135,15 +145,19 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
+                                <!-- img 1 -->
                                 <img class="d-block w-100 slide-img" src="assets/images/dogs.jpg" alt="First slide">
                             </div>
                             <div class="carousel-item">
+                                <!-- img 2 -->
                                 <img class="d-block w-100 slide-img" src="assets/images/guitar.jpg" alt="Second slide">
                             </div>
                             <div class="carousel-item">
+                                <!-- img 2 -->
                                 <img class="d-block w-100 slide-img" src="assets/images/pc.jpg" alt="Third slide">
                             </div>
                         </div>
+                        <!-- carousel control buttons -->
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -161,11 +175,12 @@
     <div class="container">
         <div class="footer">
             <div class="ft-text">
+                <!-- link to CV modal -->
                 <a data-toggle="modal" data-target="#cv-modal">
                     <h3 class="display-4">View Curriculum Vitae</h3>
                 </a>
             </div>
-            <!-- add social media font awesome icons in a footer div -->
+            <!-- social media font awesome icons -->
             <div class="ft-icons">
                 <!-- facebook -->
                 <a href="https://www.facebook.com/charlie101m" target="_blank">
@@ -183,7 +198,7 @@
         </div>
     </div>
     <!-- cv modal iframe -->
-    <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="cvModal" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -193,11 +208,45 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- iframe full width of modal - #view=FitH to render pdf full size in iframe -->
                     <iframe src="assets/docs/charlie mccabe cv.pdf#view=FitH" width="100%" style="height:30em"></iframe>
                 </div>
             </div>
         </div>
     </div>
+    <!-- contact modal form -->
+    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Get in touch!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- contact form -->
+                    <form action="">
+                        <div class="form-group">
+                            <label for="nameInput">Name</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Your name...">
+                            <label for="emailInput">Email</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Your email...">
+                            <label for="subjectInput">Subject</label>
+                            <input type="text" class="form-control" id="subjectInput" placeholder="Please call me about...">
+                            <label for="messageInput">Message</label>
+                            <textarea class="form-control" id="messageInput" rows="5"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
