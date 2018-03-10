@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+
+include "contact.php";
+
+?>
 
 <html>
 
@@ -36,7 +40,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- link to portfolio page -->
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="portfolio.html">Portfolio</a>
+                        <a class="btn btn-primary" href="portfolio.php">Portfolio</a>
                     </li>
                     <!-- contact modal form submission -->
                     <li class="nav-item">
@@ -57,20 +61,21 @@
                             A
                             <strong>determined, resourceful &amp; passionate</strong> web developer
                             <strong>in the making</strong>...</p>
-                        <hr class="my-4">
-                        <p class="font-weight-bold">Be sure to check out my portfolio!</p>
-                        <div class="content-center">
-                            <!-- link to portfolio page -->
-                            <a class="btn btn-primary btn-lg" href="portfolio.html" role="button">Portfolio</a>
+                            <hr class="my-4">
+                            <p class="font-weight-bold">Be sure to check out my portfolio!</p>
+                            <div class="content-center">
+                                <!-- link to portfolio page -->
+                                <a class="btn btn-primary btn-lg" href="portfolio.php" role="button">Portfolio</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <img id="profile-img" src="assets/images/profile.jpg" alt="">
+                    <div class="col-md-4">
+                        <img id="profile-img" src="assets/images/profile.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div id="errorAlert" class="container"><?php echo $error ?></div>
     <!-- My Skills Section -->
     <div class="container">
         <h2 class="display-3">Thanks for stopping by my site!
@@ -114,7 +119,7 @@
         <div class="content-center">
             <p>If you havent done so already, check out my portfolio here!</p>
             <!-- link to portfolio page -->
-            <a class="btn btn-primary btn-lg" href="portfolio.html" role="button">Portfolio</a>
+            <a class="btn btn-primary btn-lg" href="portfolio.php" role="button">Portfolio</a>
         </div>
         <div class="spacer"></div>
     </div>
@@ -214,25 +219,27 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- contact form -->
-                    <form action="">
-                        <div class="form-group">
-                            <label for="nameInput">Name</label>
-                            <input type="text" class="form-control" id="nameInput" placeholder="Your name...">
-                            <label for="emailInput">Email</label>
-                            <input type="email" class="form-control" id="emailInput" placeholder="Your email...">
-                            <label for="subjectInput">Subject</label>
-                            <input type="text" class="form-control" id="subjectInput" placeholder="Please call me about...">
-                            <label for="messageInput">Message</label>
-                            <textarea class="form-control" id="messageInput" rows="5"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
+                <form method="post">
+                    <div class="modal-body">
+                        <!-- contact form -->
+                            <div class="form-group">
+                                
+                                <label for="nameInput">Name</label>
+                                <input name="name" type="text" class="form-control" id="nameInput" placeholder="Your name...">
+                                <label for="emailInput">Email</label>
+                                <input name="email" type="email" class="form-control" id="emailInput" placeholder="Your email...">
+                                <label for="subjectInput">Subject</label>
+                                <input name="subject" type="text" class="form-control" id="subjectInput" placeholder="Please call me about...">
+                                <label for="messageInput">Message</label>
+                                <textarea name="message" class="form-control" id="messageInput" rows="5"></textarea>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
+                        <input id="submit" type="submit" class="btn btn-primary" value="Submit">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -243,7 +250,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/validation.js"></script>
 </body>
 
 </html>

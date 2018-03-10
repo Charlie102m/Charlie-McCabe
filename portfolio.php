@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+
+include "contact.php";
+
+?>
 
 <html>
 
@@ -26,7 +30,7 @@
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 Charlie McCabe
             </a>
             <!-- data-toggler for mobile site -->
@@ -49,7 +53,6 @@
             </div>
         </div>
     </nav>
-
     <!-- page heading section -->
     <div class="header">
         <div class="container">
@@ -59,8 +62,9 @@
                 skills!
                 <br>My prefered stack is APACHE, however I am also in the process of experimenting with node.js.
                 <br>I am regularly updating this site with my most recent projects, so be sure to visit often!</p>
+            </div>
         </div>
-    </div>
+        <div id="errorAlert" class="container"><?php echo $error ?></div>
     <!-- card section -->
     <div class="container">
         <div class="card-columns mainBody">
@@ -206,25 +210,27 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- contact form -->
-                    <form action="">
-                        <div class="form-group">
-                            <label for="nameInput">Name</label>
-                            <input type="text" class="form-control" id="nameInput" placeholder="Your name...">
-                            <label for="emailInput">Email</label>
-                            <input type="email" class="form-control" id="emailInput" placeholder="Your email...">
-                            <label for="subjectInput">Subject</label>
-                            <input type="text" class="form-control" id="subjectInput" placeholder="Please call me about...">
-                            <label for="messageInput">Message</label>
-                            <textarea class="form-control" id="messageInput" rows="5"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
+                <form method="post">
+                    <div class="modal-body">
+                        <!-- contact form -->
+                            <div class="form-group">
+                                
+                                <label for="nameInput">Name</label>
+                                <input name="name" type="text" class="form-control" id="nameInput" placeholder="Your name...">
+                                <label for="emailInput">Email</label>
+                                <input name="email" type="email" class="form-control" id="emailInput" placeholder="Your email...">
+                                <label for="subjectInput">Subject</label>
+                                <input name="subject" type="text" class="form-control" id="subjectInput" placeholder="Please call me about...">
+                                <label for="messageInput">Message</label>
+                                <textarea name="message" class="form-control" id="messageInput" rows="5"></textarea>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
+                        <input id="input" type="submit" class="btn btn-primary" value="Submit" data-backdrop="static">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -235,7 +241,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/validation.js"></script>
 
 
 </body>
