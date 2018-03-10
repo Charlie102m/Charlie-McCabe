@@ -50,7 +50,7 @@ if ($_POST) {
         // otherwise - form validation has passed - attempt email send & check success
         if (mail($emailTo, $_POST["subject"], $msg, $headers)) {
             // email sent - feedback to user
-            $error = "<div class='alert alert-dismissible alert-success' role='alert'><strong>There were error(s) in your form:</strong><br>Your message was sent, we'll get back to you asap!<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            $error = "<div class='alert alert-dismissible alert-success' role='alert'>Your message was sent, I'll get back to you asap!<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span></div>";
         
         } else {
