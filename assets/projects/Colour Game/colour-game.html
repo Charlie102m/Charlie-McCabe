@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <title>Colour Game</title>
+
+    <link rel="stylesheet" href="colour-game-resources/colour-game-styles.css">
+
+</head>
+
+<body>
+
+    <!-- header of page, interactive background color -->
+    <div id="header">
+        <h1>The Great
+            <br>
+            <!-- color updated with game logic on load -->
+            <span id="colorDisplay">RGB</span>
+            <br>Colour Game!</h1>
+    </div>
+
+    <!-- container for difficulty buttons and state messages -->
+    <div class="stripe">
+        <!-- formatted in table for uniform spacing -->
+        <table class="container">
+            <tr>
+                <!-- clickable -->
+                <td class="mode">
+                    Easy
+                </td>
+                <!-- state update -->
+                <td id="message">
+                    Guess The Colour
+                </td>
+                <!-- clickable -->
+                <td class=" mode selected">
+                    Hard
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- squares centered on page -->
+    <div class="container">
+        <!-- squares row 1 -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <!-- squares row 2 -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <!-- hint image (easy-mode only) -->
+        <img id="hint" src="colour-game-resources/hint.png">
+        <br>
+        <!-- game reset button -->
+        <button id="reset" class="stripe">New Colours?</button>
+    </div>
+
+    <!-- script for game engine -->
+    <script src="colour-game-resources/game.js"></script>
+    
+</body>
+
+</html>

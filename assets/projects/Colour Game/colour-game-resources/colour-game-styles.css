@@ -1,0 +1,114 @@
+/* css reset - uppercase text */
+
+body {
+    background-color: #232323;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+/* container for page header */
+
+#header {
+    text-align: center;
+    background-color: #1A6B85;
+}
+
+/* header text */
+
+h1 {
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+/* interactive text within header text */
+
+#colorDisplay {
+    font-size: 2em;
+}
+
+/* second div - white strip */
+
+.stripe {
+    background-color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* table used to format white stripe */
+
+table {
+    border: none;
+    border-spacing: 0;
+    color: #1A6B85;
+}
+
+td {
+    width: 30%;
+    padding: 1.66%;
+}
+
+/* selected state for difficulty buttons */
+
+.selected {
+    background-color: #1A6B85;
+    color: white;
+}
+
+/* hover state for difficulty buttons */
+
+.mode:hover {
+    background-color: #1A6B85;
+    color: white;
+    transition: all 0.3s;
+    --webkit-transition: all 0.3s;
+    --moz-transition: all 0.3s;
+}
+
+/* squares centered within div */
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* clickable divs */
+
+.square {
+    width: 30%;
+    padding-top: 30%;
+    border-radius: 15%;
+    background-color: purple;
+    float: left;
+    margin: 1.66%;
+    transition: background 0.6s;
+    --webkit-transition: background 0.6s;
+    --moz-transition: background 0.6s;
+}
+
+/* hint image - only visible on easy mode */
+
+#hint {
+    width: 300px;
+    position: relative;
+    /* top: 20px; */
+    display: none;
+}
+
+/* reset button */
+
+#reset {
+    position: relative;
+    padding: 20px;
+    top: 20px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #1A6B85;
+    color: white;
+    border: none;
+    outline: none;
+}

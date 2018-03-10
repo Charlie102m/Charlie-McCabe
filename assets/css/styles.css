@@ -6,12 +6,6 @@ body {
     position: relative;
 }
 
-/* generic para text alignment */
-
-p {
-    text-align: justify;
-}
-
 /* remove default blue fort for links */
 
 a {
@@ -85,7 +79,7 @@ a:hover {
     margin-top: 55px;
     padding: 0;
     border: none;
-    color: #0b0c10;
+    color: #1F2833;
     background: #C5C6C7;
 }
 
@@ -122,15 +116,18 @@ a:hover {
 /* carousel image uniform formatting */
 
 .slide-img {
-    height: 300px;
+    /* height: 300px; */
     margin: 0 auto;
 }
 
 /* footer container */
 
 .footer {
-    height: 100px;
+    height: 120px;
     padding: 20px;
+    background: #1F2833;
+    color: #c5c6c7;
+    border-top: 2px solid #c5c6c7;
 }
 
 /* hover state for footer links */
@@ -190,9 +187,9 @@ a:hover {
 /* code icon formatting */
 
 #code-icon {
-    text-align: left;
     margin: 0;
-    font-size: 3em;
+    font-size: 0.8em;
+    color: #45a29e;
 }
 
 /* icon formatting My Skills section */
@@ -208,6 +205,21 @@ a:hover {
 
 #aboutme {
     background: #45a29e;
-    color: #1F2833;
+    color: #c5c6c7;
     padding: 20px;
+}
+
+/* portfolio styles */
+
+.spacer-60 {
+    margin-bottom: 60px;
+}
+.spacer-50 {
+    margin-bottom: 50px;
+}
+.spacer-30 {
+    margin-bottom: 30px;
+}
+.spacer-10 {
+    margin-bottom: 10px;
 }

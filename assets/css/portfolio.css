@@ -1,0 +1,41 @@
+body {
+    background: #45a29e;
+    color: #1F2833;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.header {
+    margin-top: 56px;
+    padding: 20px 0;
+    background: white;
+    box-shadow: 0 0 8px #1F2833;
+}
+
+.headerText {
+    border-left: 3px solid #45a29e;
+    padding: 0 0 0 10px;
+    margin-left: 100px;
+}
+
+.mainBody {
+    padding: 20px 0;
+}
+
+.card {
+    box-shadow: 0 0 16px #1F2833;
+}
+.card:hover {
+    box-shadow: 0 0 16px white;
+}
+
+a:hover {
+    color: #45a29e;
+}
+
+.footer {
+    background: #1F2833;
+    color: #c5c6c7;
+    
+}
