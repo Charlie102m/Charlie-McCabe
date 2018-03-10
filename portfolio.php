@@ -195,7 +195,7 @@ include "contact.php";
                 </div>
                 <div class="modal-body">
                     <!-- iframe full width of modal - #view=FitH to render pdf full size in iframe -->
-                    <iframe src="assets/docs/charlie mccabe cv.pdf#view=FitH" width="100%" style="height:30em"></iframe>
+                    <iframe src="assets/docs/Charlie McCabe CV.pdf#view=FitH" width="100%" style="height:30em"></iframe>
                 </div>
             </div>
         </div>
