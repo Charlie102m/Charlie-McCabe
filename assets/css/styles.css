@@ -23,6 +23,7 @@ strong {
 a:hover {
     text-decoration: none;
     cursor: pointer;
+    color: #45a29e;
 }
 
 /* navbar formatting */

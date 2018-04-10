@@ -1,28 +1,20 @@
 <?php
-
 include "contact.php";
-
 ?>
-
 <html>
-
 <head>
     <!-- required meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Charlie McCabe | Aspiring Developer, Lifetime Learner</title>
-
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
     <!-- font awesome -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <!-- custom styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
-
+    <title>Charlie McCabe | Aspiring Developer, Lifetime Learner</title>
 </head>
-
 <body>
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -81,7 +73,6 @@ include "contact.php";
         <h2 class="display-3">Thanks for stopping by my site!
             <i id="code-icon" class="fas fa-code"></i>
         </h2>
-
         <!-- small code icon -->
         <div class="row">
             <div id="icons-ctn" class="col-md-7">
@@ -169,7 +160,7 @@ include "contact.php";
         <div class="container">
             <div class="ft-text">
                 <!-- link to CV modal -->
-                <a data-toggle="modal" data-target="#cv-modal">
+                <a href="" data-toggle="modal" data-target="#cv-modal">
                     <h3 class="display-4">View Curriculum Vitae</h3>
                 </a>
             </div>
@@ -190,7 +181,6 @@ include "contact.php";
             </div>
         </div>
     </div>
-
     <!-- MODALS -->
     <!-- cv modal iframe -->
     <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="cvModal" aria-hidden="true">
@@ -223,7 +213,6 @@ include "contact.php";
                     <div class="modal-body">
                         <!-- contact form -->
                             <div class="form-group">
-                                
                                 <label for="nameInput">Name</label>
                                 <input name="name" type="text" class="form-control" id="nameInput" placeholder="Your name...">
                                 <label for="emailInput">Email</label>
@@ -233,7 +222,6 @@ include "contact.php";
                                 <label for="messageInput">Message</label>
                                 <textarea name="message" class="form-control" id="messageInput" rows="5"></textarea>
                             </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
@@ -243,7 +231,6 @@ include "contact.php";
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -252,5 +239,4 @@ include "contact.php";
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/validation.js"></script>
 </body>
-
 </html>

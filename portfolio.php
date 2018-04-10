@@ -1,32 +1,22 @@
 <?php
-
 include "contact.php";
-
 ?>
-
 <html>
-
 <head>
     <!-- required meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Charlie McCabe | Portfolio</title>
-
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
     <!-- font awesome -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <!-- custom styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/portfolio.css">
-
-
+    <title>Charlie McCabe | Portfolio</title>
 </head>
-
 <body>
-
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -68,16 +58,6 @@ include "contact.php";
     <!-- card section -->
     <div class="container">
         <div class="card-columns mainBody">
-            <a href="http://www.theglazeyplace.co.uk" target="_blank">
-                <div class="card">
-                    <img class="card-img-top img-thumbnail" src="assets/images/theglazeyplace.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">The Glazey Place</h5>
-                        <p class="card-text">My first commission! The Glazey Place is a vibrant ceramics studio, who required a complete rebuild
-                            of their marketing site. I now host and maintain this site with regular content updates.</p>
-                    </div>
-                </div>
-            </a>
             <a href="http://www.click-happy.co.uk" target="_blank">
                 <div class="card">
                     <img class="card-img-top img-thumbnail" src="assets/images/clickhappy.png" alt="Card image cap">
@@ -86,6 +66,16 @@ include "contact.php";
                         <p class="card-text">A prime opportunity to experiment with my new javascript skills, Click Happy is a teaching resource
                             aimed at aiding child development in Eary Years. There is a strong focus on keeping the iterface
                             clean, simple and very child friendly.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="http://www.theglazeyplace.co.uk" target="_blank">
+                <div class="card">
+                    <img class="card-img-top img-thumbnail" src="assets/images/theglazeyplace.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">The Glazey Place</h5>
+                        <p class="card-text">My first commission! The Glazey Place is a vibrant ceramics studio, who required a complete rebuild
+                            of their marketing site. I now host and maintain this site with regular content updates.</p>
                     </div>
                 </div>
             </a>
@@ -160,7 +150,7 @@ include "contact.php";
         <div class="container">
                     <div class="ft-text">
                         <!-- link to CV modal -->
-                        <a data-toggle="modal" data-target="#cv-modal">
+                        <a href="" data-toggle="modal" data-target="#cv-modal">
                             <h3 class="display-4">View Curriculum Vitae</h3>
                         </a>
                     </div>
@@ -181,7 +171,6 @@ include "contact.php";
                     </div>
                 </div>
             </div>
-
     <!-- MODALS -->
     <!-- cv modal iframe -->
     <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="cvModal" aria-hidden="true">
@@ -214,7 +203,6 @@ include "contact.php";
                     <div class="modal-body">
                         <!-- contact form -->
                             <div class="form-group">
-                                
                                 <label for="nameInput">Name</label>
                                 <input name="name" type="text" class="form-control" id="nameInput" placeholder="Your name...">
                                 <label for="emailInput">Email</label>
@@ -224,7 +212,6 @@ include "contact.php";
                                 <label for="messageInput">Message</label>
                                 <textarea name="message" class="form-control" id="messageInput" rows="5"></textarea>
                             </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sec" data-dismiss="modal">Close</button>
@@ -234,7 +221,6 @@ include "contact.php";
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -242,8 +228,5 @@ include "contact.php";
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/validation.js"></script>
-
-
 </body>
-
 </html>
