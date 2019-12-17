@@ -18,7 +18,7 @@ if ($_POST) {
     // check if name ! does not have content
     if (!$_POST["name"]) {
         // append to error array
-        $error .= "An name is required!<br>";
+        $error .= "A name is required!<br>";
     }
     // check if email ! does not have content
     if (!$_POST["email"]) {
