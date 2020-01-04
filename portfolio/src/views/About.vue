@@ -10,10 +10,9 @@
       <div class="column">
         <p class="body-text">
           Results-orientated
-          <strong>Full Stack Web Developer</strong> and
-          experienced
-          <strong>Product Development Manager</strong> with a strong
-          commitment to delivering concise, reliable and elegant web solutions.
+          <strong>Full Stack Web Developer</strong> and experienced
+          <strong>Product Development Manager</strong> with a strong commitment
+          to delivering concise, reliable and elegant web solutions.
         </p>
         <p class="body-text">
           Working across multiple tech startups in the
@@ -29,8 +28,8 @@
         <p class="body-text">
           Highly practiced in using a wide array of web technologies,
           specialising in
-          <strong>Node.js</strong> on the server and
-          <strong>Vue.js</strong> up front.
+          <strong>Node.js</strong> on the server and <strong>Vue.js</strong> up
+          front.
         </p>
         <p class="body-text">
           When I’m not plunging into the depths of the web, I am a proud father
@@ -106,7 +105,8 @@ export default {
   -moz-box-shadow: 0px 10px 21px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 21px -4px rgba(0, 0, 0, 0.75);
   margin: 24px auto;
-  background-image: url("../assets/CharlieAndRobin.jpg");
+  background-image: url("../assets/CharlieAndJesse.jpg");
+  /* background-image: url("../assets/CharlieAndRobin.jpg"); */
   background-position: center;
   background-size: cover;
 }

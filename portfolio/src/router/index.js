@@ -10,12 +10,14 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    meta: { transition: 'fade-in-left' },
   },
   {
     path: '/about',
     name: 'about',
-    component: About
+    component: About,
+    meta: { transition: 'fade-in-right' },
 
   },
   {
@@ -30,6 +32,15 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name === 'about' && from.name === 'portfolio') {
+    routes[1].meta.transition = 'fade-in-left'
+  } else {
+    routes[1].meta.transition = 'fade-in-right'
+  }
+  next()
 })
 
 export default router

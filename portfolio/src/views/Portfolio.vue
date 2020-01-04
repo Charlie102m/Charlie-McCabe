@@ -10,14 +10,21 @@
         backgroundSize: project.logoSize
       }"
       @click="ShowProject(project)"
+      v-show="!project.inDevelopment"
     >
       <caption>
         {{
-        project.name
+          project.name
         }}
       </caption>
     </div>
-    <ProjectShow :project="selectedProject" v-show="displayProjectShow" @clicked="HideProject()" />
+    <transition name="slide-fade">
+      <ProjectShow
+        :project="selectedProject"
+        v-if="displayProjectShow"
+        @clicked="HideProject()"
+      />
+    </transition>
   </section>
 </template>
 
@@ -71,42 +78,10 @@ export default {
           Using RobinMail removes the need to create your own mail servers, saving you time. 
           RobinMail also ensures your destination email stays private and is not visible in your front-end scripts!`,
           techStack: ["Node.js", "Express.js", "MongoDB", "Nodemailer.js"],
-          logo: "/img/robinmail-logo.jpg",
+          logo: "/img/robinmail-logo.png",
           logoSize: "45%",
-          complimentaryColor: "#fff",
+          complimentaryColor: "#BA1A28",
           url: "http://www.robinmail.org",
-          inDevelopment: false
-        },
-        {
-          name: "HubSuite",
-          jobTitle: "Full Stack Developer",
-          description: `A project management tool for software development companies, designed to track development tasks and bugs. 
-          Contains helpdesk ticketing for clients, sprint & task management for the development team and detailed reporting for management.`,
-          techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
-          logo: "/img/HubSuite-logo.png",
-          logoSize: "60%",
-          complimentaryColor: "#018080",
-          url: "https://hubsquite.co.uk",
-          inDevelopment: true
-        },
-        {
-          name: "Click Happy EYFS",
-          jobTitle: "Full Stack Developer",
-          description: `Interactive educational games and learning resources targeted for EYFS in primary schools. 
-          These games are designed for use on the interactive whiteboards, indivdual ipads or desktops - with printable supplentary resources.`,
-          techStack: [
-            "PHP",
-            "MySQL",
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap"
-          ],
-          logo: "/img/click-happy-logo.png",
-          logoSize: "70%",
-          complimentaryColor: "#fff",
-          url: "https://click-happy.co.uk",
           inDevelopment: false
         },
         {
@@ -131,6 +106,39 @@ export default {
           inDevelopment: false
         },
         {
+          name: "Click Happy EYFS",
+          jobTitle: "Full Stack Developer",
+          description: `Interactive educational games and learning resources targeted for EYFS in primary schools. 
+          These games are designed for use on the interactive whiteboards, indivdual ipads or desktops - with printable supplentary resources.`,
+          techStack: [
+            "PHP",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "jQuery",
+            "Bootstrap"
+          ],
+          logo: "/img/click-happy-logo.png",
+          logoSize: "70%",
+          complimentaryColor: "#fff",
+          url: "https://click-happy.co.uk",
+          inDevelopment: false
+        },
+
+        {
+          name: "HubSuite",
+          jobTitle: "Full Stack Developer",
+          description: `A project management tool for software development companies, designed to track development tasks and bugs. 
+          Contains helpdesk ticketing for clients, sprint & task management for the development team and detailed reporting for management.`,
+          techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
+          logo: "/img/HubSuite-logo.png",
+          logoSize: "60%",
+          complimentaryColor: "#018080",
+          url: "https://hubsuite.co.uk",
+          inDevelopment: true
+        },
+        {
           name: "Convo",
           jobTitle: "Full Stack Developer",
           description: `Inspired by the chat app utilised in the Channel 4 Hit TV Show "The Circle". 
@@ -149,18 +157,6 @@ export default {
           inDevelopment: true
         },
         {
-          name: "The Glazey Place",
-          jobTitle: "Full Stack Developer",
-          description: `Simple yet elegant brochure site for The Gazey Place, a paint your own pottery studio based in Mansfield. 
-          This site was developed mobile first due to the nature of traffic recieved and includes a facebook integration to display their most recent posts.`,
-          techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-          logo: "/img/glazey-place-logo.png",
-          logoSize: "60%",
-          complimentaryColor: "#fff",
-          url: "https://theglazeyplace.co.uk",
-          inDevelopment: false
-        },
-        {
           name: "Provision Tracker",
           jobTitle: "Product Development Manager",
           description: `Special Educational Needs (SEN) provision tracking tool for primary, secondary and special schools across the UK. 
@@ -172,6 +168,19 @@ export default {
           url: "https://provisiontracker.com",
           inDevelopment: false
         },
+        {
+          name: "The Glazey Place",
+          jobTitle: "Full Stack Developer",
+          description: `Simple yet elegant brochure site for The Gazey Place, a paint your own pottery studio based in Mansfield. 
+          This site was developed mobile first due to the nature of traffic recieved and includes a facebook integration to display their most recent posts.`,
+          techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+          logo: "/img/glazey-place-logo.png",
+          logoSize: "60%",
+          complimentaryColor: "#fff",
+          url: "https://theglazeyplace.co.uk",
+          inDevelopment: false
+        },
+
         {
           name: "Pet Portaits By Katy",
           jobTitle: "Full Stack Developer",

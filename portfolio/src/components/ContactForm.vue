@@ -2,9 +2,13 @@
   <section class="contact-section">
     <font-awesome-icon :icon="['fas', 'times']" @click="HideContactFrom()" />
     <h2>I love to chat!</h2>
-    <p>I would love to hear from you about projects, collaborations or work opportunites!</p>
+    <p>
+      I would love to hear from you about projects, collaborations or work
+      opportunites!
+    </p>
     <p>Drop me a message below and I will email you back as soon as I can.</p>
     <form v-on:submit.prevent="SubmitForm()">
+      <p class="error" v-show="this.error">{{ error }}</p>
       <input
         type="text"
         class="form-input"
@@ -26,20 +30,31 @@
         v-model="form.message"
         placeholder="What would you like to say?"
       ></textarea>
-      <button class="submit">Send</button>
+      <button class="submit" :class="{ success: success }">
+        <font-awesome-icon
+          class="rotating"
+          :icon="['fas', 'circle-notch']"
+          v-if="loading"
+        />
+        <span v-else>Send</span>
+      </button>
     </form>
   </section>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "ContactForm",
   data() {
     return {
+      error: null,
+      loading: false,
       form: {
         name: null,
         email: null,
-        message: null
+        message: null,
+        origin: "charliemccabe.co.uk"
       }
     };
   },
@@ -47,13 +62,26 @@ export default {
     HideContactFrom() {
       return this.$emit("HideContactFrom");
     },
-    SubmitForm() {
-      const formData = JSON.parse(JSON.stringify(this.form));
-      console.log("formData: ", formData);
-      this.form.name = null;
-      this.form.email = null;
-      this.form.message = null;
-      return this.HideContactFrom();
+    async SubmitForm() {
+      const url = "http://www.robinmail.org/api/v1/mailer";
+      this.loading = true;
+
+      try {
+        const formData = JSON.parse(JSON.stringify(this.form));
+        const submission = await axios.post(url, formData);
+
+        if (submission.data.success === true) {
+          this.loading = false;
+          this.form.name = null;
+          this.form.email = null;
+          this.form.message = null;
+          this.error = null;
+          return this.HideContactFrom();
+        }
+      } catch (error) {
+        this.loading = false;
+        this.error = error.response.data.error;
+      }
     }
   }
 };
@@ -121,6 +149,47 @@ button {
   text-decoration: none;
   padding: 10px;
   cursor: pointer;
+  outline: none;
+}
+
+[data-icon*="circle-notch"] {
+  color: white !important;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
 }
 
 input::-webkit-input-placeholder {
@@ -175,5 +244,11 @@ textarea:placeholder-shown {
     padding: 40px;
     left: 0;
   }
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  padding: 5px;
+  color: red;
 }
 </style>
