@@ -65,6 +65,19 @@ export default {
           inDevelopment: false
         },
         {
+          name: "RobinMail",
+          jobTitle: "Full Stack Developer",
+          description: `Designed as a quick and simple solution for Front End Developers that wish to send emails. 
+          Using RobinMail removes the need to create your own mail servers, saving you time. 
+          RobinMail also ensures your destination email stays private and is not visible in your front-end scripts!`,
+          techStack: ["Node.js", "Express.js", "MongoDB", "Nodemailer.js"],
+          logo: "/img/robinmail-logo.jpg",
+          logoSize: "45%",
+          complimentaryColor: "#fff",
+          url: "http://www.robinmail.org",
+          inDevelopment: false
+        },
+        {
           name: "HubSuite",
           jobTitle: "Full Stack Developer",
           description: `A project management tool for software development companies, designed to track development tasks and bugs. 

@@ -99,8 +99,13 @@ export default {
   font-weight: 200;
   border-radius: 0;
   border: 0;
-  border-bottom: 3px solid #2c2c2d;
-  background-color: #2c2c2d20;
+  border-bottom: 3px solid #912668;
+  background-color: #2c2c2d0b;
+  outline: none;
+}
+
+.contact-section .form-input:focus {
+  box-shadow: 0 0 3px black;
 }
 
 button {
@@ -120,47 +125,47 @@ button {
 
 input::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
 }
 input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 input::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 input:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
 }
 input:placeholder-shown {
   /* Standard Pseudo-class */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
 }
 textarea::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
 }
 textarea:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 textarea::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 textarea:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
 }
 textarea:placeholder-shown {
   /* Standard Pseudo-class */
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 886px) {
