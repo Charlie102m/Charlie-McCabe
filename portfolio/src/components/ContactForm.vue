@@ -31,11 +31,7 @@
         placeholder="What would you like to say?"
       ></textarea>
       <button class="submit" :class="{ success: success }">
-        <font-awesome-icon
-          class="rotating"
-          :icon="['fas', 'circle-notch']"
-          v-if="loading"
-        />
+        <font-awesome-icon class="rotating" :icon="['fas', 'circle-notch']" v-if="loading" />
         <span v-else>Send</span>
       </button>
     </form>
@@ -63,7 +59,7 @@ export default {
       return this.$emit("HideContactFrom");
     },
     async SubmitForm() {
-      const url = "http://www.robinmail.org/api/v1/mailer";
+      const url = "https://www.robinmail.org/api/v1/mailer";
       this.loading = true;
 
       try {
