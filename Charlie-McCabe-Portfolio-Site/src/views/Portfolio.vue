@@ -12,18 +12,15 @@
       @click="ShowProject(project)"
       v-show="!project.inDevelopment"
     >
+      <span class="updated" v-show="project.recentlyUpdated">Recently Updated!</span>
       <caption>
         {{
-          project.name
+        project.name
         }}
       </caption>
     </div>
     <transition name="slide-fade">
-      <ProjectShow
-        :project="selectedProject"
-        v-if="displayProjectShow"
-        @clicked="HideProject()"
-      />
+      <ProjectShow :project="selectedProject" v-if="displayProjectShow" @clicked="HideProject()" />
     </transition>
   </section>
 </template>
@@ -68,8 +65,9 @@ export default {
           logo: "/img/ez-expenses-logo.png",
           logoSize: "45%",
           complimentaryColor: "#2E303B",
-          url: "https://ez-expenses.co.uk",
-          inDevelopment: false
+          url: "https://www.ez-expenses.co.uk",
+          inDevelopment: false,
+          recentlyUpdated: true
         },
         {
           name: "RobinMail",
@@ -82,7 +80,8 @@ export default {
           logoSize: "45%",
           complimentaryColor: "#BA1A28",
           url: "http://www.robinmail.org",
-          inDevelopment: false
+          inDevelopment: false,
+          recentlyUpdated: false
         },
         {
           name: "Teach Luminous",
@@ -103,7 +102,8 @@ export default {
           logoSize: "90%",
           complimentaryColor: "#3C3C3B",
           url: "https://teachluminous.com",
-          inDevelopment: false
+          inDevelopment: false,
+          recentlyUpdated: false
         },
         {
           name: "Click Happy EYFS",
@@ -123,7 +123,8 @@ export default {
           logoSize: "70%",
           complimentaryColor: "#fff",
           url: "https://click-happy.co.uk",
-          inDevelopment: false
+          inDevelopment: false,
+          recentlyUpdated: false
         },
 
         {
@@ -136,7 +137,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#018080",
           url: "https://hubsuite.co.uk",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "Convo",
@@ -154,7 +156,8 @@ export default {
           logoSize: "70%",
           complimentaryColor: "#06142E",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "Provision Tracker",
@@ -166,7 +169,8 @@ export default {
           logoSize: "80%",
           complimentaryColor: "#0E6AB0",
           url: "https://provisiontracker.com",
-          inDevelopment: false
+          inDevelopment: false,
+          recentlyUpdated: false
         },
         {
           name: "The Glazey Place",
@@ -178,7 +182,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#fff",
           url: "https://theglazeyplace.co.uk",
-          inDevelopment: false
+          inDevelopment: false,
+          recentlyUpdated: false
         },
 
         {
@@ -190,7 +195,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#fff",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "School Report Writer",
@@ -202,7 +208,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#922D50",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "Groupie",
@@ -213,7 +220,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#fff",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "Thought Stream",
@@ -226,7 +234,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#E85D75",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "Tiny Tums",
@@ -238,7 +247,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#75A3BC",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         },
         {
           name: "The Weather App",
@@ -249,7 +259,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#F0CF65",
           url: "#",
-          inDevelopment: true
+          inDevelopment: true,
+          recentlyUpdated: false
         }
       ]
     };
@@ -306,6 +317,16 @@ export default {
 
 .tile:hover caption {
   opacity: 1;
+}
+
+.updated {
+  position: relative;
+  color: gold;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 2px 10px;
+  float: right;
+  line-height: 30px;
 }
 
 caption {
