@@ -18,11 +18,11 @@
         <h3>{{ project.jobTitle}}</h3>
         <h3>Overview</h3>
         <p>{{project.description}}</p>
-        <h3>Tech Stack</h3>
+        <h3 v-show="project.techStack.length > 0">Tech Stack</h3>
         <ul>
           <li v-for="(tech, index) in project.techStack" :key="index">{{ tech }}</li>
         </ul>
-        <a :href="project.url" target="_blank" v-show="!project.inDevelopment">Visit Site</a>
+        <a :href="project.url" target="_blank" v-show="!project.hideProject">Visit Site</a>
       </div>
     </div>
   </section>

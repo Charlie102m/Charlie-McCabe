@@ -6,15 +6,14 @@
     <a href="https://twitter.com/charlie102m" target="_blank">
       <font-awesome-icon :icon="['fab', 'twitter']" />
     </a>
-
-    <a
-      href="https://www.linkedin.com/in/charlie-mccabe-22b340146/"
-      target="_blank"
-    >
+    <a href="https://www.linkedin.com/in/charlie-mccabe-22b340146/" target="_blank">
       <font-awesome-icon :icon="['fab', 'linkedin-in']" />
     </a>
     <a href="https://www.instagram.com/charlie.mccabe/" target="_blank">
       <font-awesome-icon :icon="['fab', 'instagram']" />
+    </a>
+    <a href="https://github.com/Charlie102m" target="_blank">
+      <font-awesome-icon :icon="['fab', 'github']" />
     </a>
   </aside>
 </template>
@@ -28,7 +27,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 aside {
-  padding-top: 24vh;
+  padding-top: 22vh;
   position: absolute;
   height: 100vh;
   width: 50px;
@@ -40,7 +39,7 @@ aside {
 }
 
 aside .svg-inline--fa {
-  padding: 4vh 0;
+  padding: 3vh 0;
   display: block;
   margin: 0 auto;
   font-size: 2rem;
@@ -78,5 +77,9 @@ aside [data-icon*="linkedin-in"]:hover {
 
 aside [data-icon*="instagram"]:hover {
   color: #833ab4;
+}
+
+aside [data-icon*="github"]:hover {
+  color: #404142;
 }
 </style>

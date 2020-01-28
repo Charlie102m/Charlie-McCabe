@@ -10,8 +10,9 @@
         backgroundSize: project.logoSize
       }"
       @click="ShowProject(project)"
-      v-show="!project.inDevelopment"
+      v-show="!project.hideProject"
     >
+      <span class="inDevelopment" v-show="project.inDevelopment">In Development!</span>
       <span class="updated" v-show="project.recentlyUpdated">Recently Updated!</span>
       <caption>
         {{
@@ -47,6 +48,22 @@ export default {
       selectedProject: null,
       projects: [
         {
+          name: "GiggleFeed",
+          jobTitle: "Full Stack Developer",
+          description: `Mobile friendly social media for one thing and one thing only, jokes! 
+          Currently in development with the API built and the UI coming soon, GiggleFeed will 
+          resemble a twitter/redit style hybrid. Users can post their own jokes, react to each joke
+           and follow their fellow Gigglers!`,
+          techStack: ["ASP.NET Core", "CLoudify", "SQL Server", "React.js"],
+          logo: "/img/GF_Logo_Black_NB_CROPPED.PNG",
+          logoSize: "90%",
+          complimentaryColor: "#fff",
+          url: "http://gigglefeed.com",
+          hideProject: false,
+          inDevelopment: true,
+          recentlyUpdated: false
+        },
+        {
           name: "EZ Expenses",
           jobTitle: "Full Stack Developer",
           description: `Milage and expenses tracking app for field based business users.  
@@ -66,6 +83,7 @@ export default {
           logoSize: "45%",
           complimentaryColor: "#2E303B",
           url: "https://www.ez-expenses.co.uk",
+          hideProject: false,
           inDevelopment: false,
           recentlyUpdated: true
         },
@@ -80,6 +98,7 @@ export default {
           logoSize: "45%",
           complimentaryColor: "#BA1A28",
           url: "http://www.robinmail.org",
+          hideProject: false,
           inDevelopment: false,
           recentlyUpdated: false
         },
@@ -102,6 +121,55 @@ export default {
           logoSize: "90%",
           complimentaryColor: "#3C3C3B",
           url: "https://teachluminous.com",
+          hideProject: false,
+          inDevelopment: false,
+          recentlyUpdated: false
+        },
+        {
+          name: "HubSuite",
+          jobTitle: "Full Stack Developer",
+          description: `A project management tool for software development companies, designed to track development tasks and bugs. 
+          Contains helpdesk ticketing for clients, sprint & task management for the development team and detailed reporting for management.`,
+          techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
+          logo: "/img/HubSuite-logo.png",
+          logoSize: "60%",
+          complimentaryColor: "#018080",
+          url: "https://hubsuite.co.uk",
+          hideProject: true,
+          inDevelopment: false,
+          recentlyUpdated: false
+        },
+        {
+          name: "Convo",
+          jobTitle: "Full Stack Developer",
+          description: `Inspired by the chat app utilised in the Channel 4 Hit TV Show "The Circle". 
+          Convo is a simple & fully responsive messaging app for chatting with friends and meeting new people.`,
+          techStack: [
+            "Node.js",
+            "Express.js",
+            "Socket.io",
+            "MongoDB",
+            "Vue.js"
+          ],
+          logo: "/img/convo-logo.png",
+          logoSize: "70%",
+          complimentaryColor: "#06142E",
+          url: "#",
+          hideProject: true,
+          inDevelopment: false,
+          recentlyUpdated: false
+        },
+        {
+          name: "Provision Tracker",
+          jobTitle: "Product Development Manager",
+          description: `Special Educational Needs (SEN) provision tracking tool for primary, secondary and special schools across the UK. 
+          Simplicity and ease of use was the focus here, with the product producing detailed cost-benefit analysis of school provision following minimal user input.`,
+          techStack: [],
+          logo: "/img/provision-tracker-logo.png",
+          logoSize: "80%",
+          complimentaryColor: "#0E6AB0",
+          url: "https://provisiontracker.com",
+          hideProject: false,
           inDevelopment: false,
           recentlyUpdated: false
         },
@@ -123,52 +191,7 @@ export default {
           logoSize: "70%",
           complimentaryColor: "#fff",
           url: "https://click-happy.co.uk",
-          inDevelopment: false,
-          recentlyUpdated: false
-        },
-
-        {
-          name: "HubSuite",
-          jobTitle: "Full Stack Developer",
-          description: `A project management tool for software development companies, designed to track development tasks and bugs. 
-          Contains helpdesk ticketing for clients, sprint & task management for the development team and detailed reporting for management.`,
-          techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
-          logo: "/img/HubSuite-logo.png",
-          logoSize: "60%",
-          complimentaryColor: "#018080",
-          url: "https://hubsuite.co.uk",
-          inDevelopment: true,
-          recentlyUpdated: false
-        },
-        {
-          name: "Convo",
-          jobTitle: "Full Stack Developer",
-          description: `Inspired by the chat app utilised in the Channel 4 Hit TV Show "The Circle". 
-          Convo is a simple & fully responsive messaging app for chatting with friends and meeting new people.`,
-          techStack: [
-            "Node.js",
-            "Express.js",
-            "Socket.io",
-            "MongoDB",
-            "Vue.js"
-          ],
-          logo: "/img/convo-logo.png",
-          logoSize: "70%",
-          complimentaryColor: "#06142E",
-          url: "#",
-          inDevelopment: true,
-          recentlyUpdated: false
-        },
-        {
-          name: "Provision Tracker",
-          jobTitle: "Product Development Manager",
-          description: `Special Educational Needs (SEN) provision tracking tool for primary, secondary and special schools across the UK. 
-          Simplicity and ease of use was the focus here, with the product producing detailed cost-benefit analysis of school provision following minimal user input.`,
-          techStack: [],
-          logo: "/img/provision-tracker-logo.png",
-          logoSize: "80%",
-          complimentaryColor: "#0E6AB0",
-          url: "https://provisiontracker.com",
+          hideProject: false,
           inDevelopment: false,
           recentlyUpdated: false
         },
@@ -180,8 +203,9 @@ export default {
           techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
           logo: "/img/glazey-place-logo.png",
           logoSize: "60%",
-          complimentaryColor: "#fff",
+          complimentaryColor: "#eee",
           url: "https://theglazeyplace.co.uk",
+          hideProject: false,
           inDevelopment: false,
           recentlyUpdated: false
         },
@@ -195,7 +219,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#fff",
           url: "#",
-          inDevelopment: true,
+          hideProject: true,
+          inDevelopment: false,
           recentlyUpdated: false
         },
         {
@@ -208,7 +233,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#922D50",
           url: "#",
-          inDevelopment: true,
+          hideProject: true,
+          inDevelopment: false,
           recentlyUpdated: false
         },
         {
@@ -220,7 +246,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#fff",
           url: "#",
-          inDevelopment: true,
+          hideProject: true,
+          inDevelopment: false,
           recentlyUpdated: false
         },
         {
@@ -234,7 +261,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#E85D75",
           url: "#",
-          inDevelopment: true,
+          hideProject: true,
+          inDevelopment: false,
           recentlyUpdated: false
         },
         {
@@ -247,7 +275,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#75A3BC",
           url: "#",
-          inDevelopment: true,
+          hideProject: true,
+          inDevelopment: false,
           recentlyUpdated: false
         },
         {
@@ -259,7 +288,8 @@ export default {
           logoSize: "60%",
           complimentaryColor: "#F0CF65",
           url: "#",
-          inDevelopment: true,
+          hideProject: true,
+          inDevelopment: false,
           recentlyUpdated: false
         }
       ]
@@ -319,14 +349,24 @@ export default {
   opacity: 1;
 }
 
-.updated {
+.updated,
+.inDevelopment {
   position: relative;
-  color: gold;
+  top: 10px;
+  background-color: gold;
+  color: black;
   text-transform: uppercase;
   font-weight: 400;
-  padding: 2px 10px;
+  padding: 2px 15px 2px 5px;
   float: right;
-  line-height: 30px;
+  line-height: 25px;
+  -webkit-box-shadow: -5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.inDevelopment {
+  background-color: #e70e97;
 }
 
 caption {
@@ -354,7 +394,7 @@ caption {
   }
   .tile {
     height: 300px !important;
-    background-size: 40% !important;
+    background-size: 50% !important;
   }
 }
 
@@ -367,8 +407,8 @@ caption {
   }
   .tile {
     max-width: 100%;
-    height: 200px !important;
-    background-size: 30% !important;
+    height: 230px !important;
+    background-size: 40% !important;
   }
 }
 
@@ -383,7 +423,7 @@ caption {
   .tile {
     max-width: 100%;
     height: 200px !important;
-    background-size: 30% !important;
+    background-size: 40% !important;
   }
   caption {
     display: none;
