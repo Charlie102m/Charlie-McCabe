@@ -79,7 +79,7 @@ export default {
           }
         );
       } catch (error) {
-        console.log({ error });
+        this.HideContactFrom();
       }
       this.loading = false;
       this.form.name = null;
