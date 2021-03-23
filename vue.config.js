@@ -1,3 +1,3 @@
 module.exports = {
-  outputDir: "docs",
+  outputDir: "Charlie-McCabe",
 };
