@@ -4,13 +4,13 @@
       <div class="column">
         <div class="thumbnail"></div>
         <h1 class="title">Charlie McCabe</h1>
-        <p class="lead">full stack web developer</p>
+        <p class="lead">Software Engineer</p>
         <p class="small">product development manager</p>
       </div>
       <div class="column">
         <p class="body-text">
           Results-orientated
-          <strong>Full Stack Web Developer</strong> and experienced
+          <strong>Software Engineer</strong> and experienced
           <strong>Product Development Manager</strong> with a strong commitment
           to delivering concise, reliable and elegant web solutions.
         </p>
@@ -28,8 +28,8 @@
         <p class="body-text">
           Highly practiced in using a wide array of web technologies,
           specialising in
-          <strong>Node.js</strong> on the server and <strong>Vue.js</strong> up
-          front.
+          <strong>.Net Core & Node.js</strong> on the server and
+          <strong>React.js</strong> up front.
         </p>
         <p class="body-text">
           When I’m not plunging into the depths of the web, I am a proud father
@@ -57,9 +57,9 @@ export default {
     new Parallax(scene, {
       realtiveInput: true,
       clipRelativeInput: true,
-      hoverOnly: true
+      hoverOnly: true,
     });
-  }
+  },
 };
 </script>
 
