@@ -7,7 +7,7 @@
       opportunites!
     </p>
     <p>Drop me a message below and I will email you back as soon as I can.</p>
-    <form v-on:submit.prevent="SubmitForm()">
+    <form v-on:submit.prevent="SubmitForm">
       <p class="error" v-show="this.error">{{ error }}</p>
       <input
         type="text"
@@ -30,8 +30,12 @@
         v-model="form.message"
         placeholder="What would you like to say?"
       ></textarea>
-      <button class="submit" :class="{ success: success }">
-        <font-awesome-icon class="rotating" :icon="['fas', 'circle-notch']" v-if="loading" />
+      <button class="submit">
+        <font-awesome-icon
+          class="rotating"
+          :icon="['fas', 'circle-notch']"
+          v-if="loading"
+        />
         <span v-else>Send</span>
       </button>
     </form>
@@ -39,7 +43,8 @@
 </template>
 
 <script>
-import axios from "axios";
+import { sendForm } from "emailjs-com";
+
 export default {
   name: "ContactForm",
   data() {
@@ -50,36 +55,40 @@ export default {
         name: null,
         email: null,
         message: null,
-        origin: "charliemccabe.co.uk"
-      }
+      },
     };
   },
   methods: {
     HideContactFrom() {
       return this.$emit("HideContactFrom");
     },
-    async SubmitForm() {
-      const url = "https://www.robinmail.org/api/v1/mailer";
+    async SubmitForm(e) {
       this.loading = true;
 
       try {
-        const formData = JSON.parse(JSON.stringify(this.form));
-        const submission = await axios.post(url, formData);
-
-        if (submission.data.success === true) {
-          this.loading = false;
-          this.form.name = null;
-          this.form.email = null;
-          this.form.message = null;
-          this.error = null;
-          return this.HideContactFrom();
-        }
+        const { name, email, message } = JSON.parse(JSON.stringify(this.form));
+        sendForm(
+          process.env.VUE_APP_EMAIL_SERVICE_ID,
+          process.env.VUE_APP_EMAIL_TEMPLATE_ID,
+          e.target,
+          process.env.VUE_APP_EMAIL_USER_ID,
+          {
+            name: name,
+            email: email,
+            message: message,
+          }
+        );
       } catch (error) {
-        this.loading = false;
-        this.error = error.response.data.error;
+        console.log({ error });
       }
-    }
-  }
+      this.loading = false;
+      this.form.name = null;
+      this.form.email = null;
+      this.form.message = null;
+      this.error = null;
+      return this.HideContactFrom();
+    },
+  },
 };
 </script>
 
@@ -92,7 +101,7 @@ export default {
   top: 0;
   right: 0;
   background-color: white;
-  z-index: 300;
+  z-index: 301;
   padding: 30px 40px;
   overflow-y: auto;
 }
