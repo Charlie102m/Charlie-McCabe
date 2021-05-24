@@ -9,27 +9,20 @@
       </div>
       <div class="column">
         <p class="body-text">
-          Results-orientated
-          <strong>Software Engineer</strong> and experienced
-          <strong>Product Development Manager</strong> with a strong commitment
-          to delivering concise, reliable and elegant web solutions.
+          A results-orientated
+          <strong>Full Stack Software Engineer</strong> with a strong commitment
+          to delivering scalable, maintainable and user focused software
+          solutions.
         </p>
         <p class="body-text">
-          Working across multiple tech startups in the
-          <strong>education and business industries,</strong> I strive to exceed
-          expectations for my clients, producing products they are proud to
-          stand behind.
+          Extensive experience in a wide array of web technologies; specializing
+          in .NET 5 microservice development, React JS and TypeScript.
         </p>
         <p class="body-text">
-          Whether project managing the development of a product or developing it
-          myself, one thing is guaranteed at the end,
-          <strong>quality.</strong>
-        </p>
-        <p class="body-text">
-          Highly practiced in using a wide array of web technologies,
-          specialising in
-          <strong>.Net Core & Node.js</strong> on the server and
-          <strong>React.js</strong> up front.
+          Previous experience as a
+          <strong>Product Development Manager</strong> equips me with
+          leadership, communication and organizational skills, providing
+          additional adaptability and perspective.
         </p>
         <p class="body-text">
           When I’m not plunging into the depths of the web, I am a proud father

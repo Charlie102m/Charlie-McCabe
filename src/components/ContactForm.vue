@@ -76,6 +76,7 @@ export default {
             name: name,
             email: email,
             message: message,
+            reply_to: email,
           }
         );
       } catch (error) {

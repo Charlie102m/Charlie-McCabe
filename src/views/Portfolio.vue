@@ -7,21 +7,29 @@
       :style="{
         backgroundColor: project.complimentaryColor,
         backgroundImage: 'url(' + project.logo + ')',
-        backgroundSize: project.logoSize
+        backgroundSize: project.logoSize,
       }"
       @click="ShowProject(project)"
       v-show="!project.hideProject"
     >
-      <span class="inDevelopment" v-show="project.inDevelopment">In Development!</span>
-      <span class="updated" v-show="project.recentlyUpdated">Recently Updated!</span>
+      <span class="inDevelopment" v-show="project.inDevelopment"
+        >In Development!</span
+      >
+      <span class="updated" v-show="project.recentlyUpdated"
+        >Recently Updated!</span
+      >
       <caption>
         {{
-        project.name
+          project.name
         }}
       </caption>
     </div>
     <transition name="slide-fade">
-      <ProjectShow :project="selectedProject" v-if="displayProjectShow" @clicked="HideProject()" />
+      <ProjectShow
+        :project="selectedProject"
+        v-if="displayProjectShow"
+        @clicked="HideProject()"
+      />
     </transition>
   </section>
 </template>
@@ -32,7 +40,7 @@ import ProjectShow from "@/components/ProjectShow.vue";
 export default {
   name: "portfolio",
   components: {
-    ProjectShow
+    ProjectShow,
   },
   methods: {
     ShowProject(project) {
@@ -40,7 +48,7 @@ export default {
     },
     HideProject() {
       return (this.displayProjectShow = false), (this.selectedProject = null);
-    }
+    },
   },
   data() {
     return {
@@ -48,24 +56,59 @@ export default {
       selectedProject: null,
       projects: [
         {
+          name: "Selenity Expenses",
+          jobTitle: "Software Engineer",
+          description: `Fast, accurate and compliant expenses software. Undergoing a substantial re-write from a legacy .NET framework monolith to .NET 5 microservices with an SPA front end.`,
+          techStack: [
+            "React.js",
+            "Typescript",
+            "Material UI",
+            ".NET 5",
+            "Redis",
+            "Microsoft SQL Server",
+            "Azure",
+            "Kubernetes",
+          ],
+          logo: "/img/sel-expenses-logo.png",
+          logoSize: "80%",
+          complimentaryColor: "#8F1FF7",
+          url: "https://www.allocatesoftware.com/expense-management-software/",
+          hideProject: false,
+          inDevelopment: false,
+          recentlyUpdated: false,
+        },
+        {
+          name: "Refinement Agenda Manager",
+          jobTitle: "Software Engineer",
+          description: `A lightweight desktop application to manage refinement agendas. Add work items to an agenda in seconds with the in build Azure Dev Ops integration. Then copy the generated planningpoker.com formatted links to your clipboard with a single click.`,
+          techStack: ["Electron.js", "React.js", "Material UI", "Typescript"],
+          logo: "/img/ram-icon.png",
+          logoSize: "60%",
+          complimentaryColor: "#333333",
+          url: "https://github.com/Charlie102m/RAM-Refinement-Agenda-Manager",
+          hideProject: false,
+          inDevelopment: false,
+          recentlyUpdated: true,
+        },
+        {
           name: "GiggleFeed",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Mobile friendly social media for one thing and one thing only, jokes! 
           Currently in development with the API built and the UI coming soon, GiggleFeed will 
           resemble a twitter/redit style hybrid. Users can post their own jokes, react to each joke
            and follow their fellow Gigglers!`,
-          techStack: ["ASP.NET Core", "CLoudify", "SQL Server", "React.js"],
+          techStack: ["ASP.NET Core", "Cloudify", "SQL Server", "React.js"],
           logo: "/img/GF_Logo_Black_NB_CROPPED.PNG",
           logoSize: "90%",
           complimentaryColor: "#fff",
           url: "http://gigglefeed.com",
           hideProject: false,
           inDevelopment: true,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
           name: "EZ Expenses",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Milage and expenses tracking app for field based business users.  
           Mobile first design, allowing quick and simple logging of business trips and purchases. 
           Leverages Google API’s to search for destinations, calculate optimal route, distance and time.`,
@@ -77,7 +120,7 @@ export default {
             "Vuetify",
             "Amazon S3",
             "Google Directions API",
-            "Google Autocomplete API"
+            "Google Autocomplete API",
           ],
           logo: "/img/ez-expenses-logo.png",
           logoSize: "45%",
@@ -85,79 +128,7 @@ export default {
           url: "https://www.ez-expenses.co.uk",
           hideProject: false,
           inDevelopment: false,
-          recentlyUpdated: true
-        },
-        {
-          name: "RobinMail",
-          jobTitle: "Full Stack Developer",
-          description: `Designed as a quick and simple solution for Front End Developers that wish to send emails. 
-          Using RobinMail removes the need to create your own mail servers, saving you time. 
-          RobinMail also ensures your destination email stays private and is not visible in your front-end scripts!`,
-          techStack: ["Node.js", "Express.js", "MongoDB", "Nodemailer.js"],
-          logo: "/img/robinmail-logo.png",
-          logoSize: "45%",
-          complimentaryColor: "#BA1A28",
-          url: "http://www.robinmail.org",
-          hideProject: false,
-          inDevelopment: false,
-          recentlyUpdated: false
-        },
-        {
-          name: "Teach Luminous",
-          jobTitle: "Product Development Manager & Full Stack Developer",
-          description: `Digital teaching resource targeting primary (KS2) and secondary schools. 
-          Styled as a digital magazine, this content managed web app is updated each week with educational videos, quiz's, 
-          exercises and debates which are perfect for the short and typically under reasourced form periods each day. 
-          I fulfilled the role of Product Development Manager for the main build of this site, 
-          whilst also developing a business administration area for Teach Luminous staff to access & manage customer data.`,
-          techStack: [
-            "Node.js",
-            "Express.js",
-            "CosmosDB",
-            "Vue.js",
-            "Bootstrap-Vue"
-          ],
-          logo: "/img/teach-luminous-logo.svg",
-          logoSize: "90%",
-          complimentaryColor: "#3C3C3B",
-          url: "https://teachluminous.com",
-          hideProject: false,
-          inDevelopment: false,
-          recentlyUpdated: false
-        },
-        {
-          name: "HubSuite",
-          jobTitle: "Full Stack Developer",
-          description: `A project management tool for software development companies, designed to track development tasks and bugs. 
-          Contains helpdesk ticketing for clients, sprint & task management for the development team and detailed reporting for management.`,
-          techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
-          logo: "/img/HubSuite-logo.png",
-          logoSize: "60%",
-          complimentaryColor: "#018080",
-          url: "https://hubsuite.co.uk",
-          hideProject: true,
-          inDevelopment: false,
-          recentlyUpdated: false
-        },
-        {
-          name: "Convo",
-          jobTitle: "Full Stack Developer",
-          description: `Inspired by the chat app utilised in the Channel 4 Hit TV Show "The Circle". 
-          Convo is a simple & fully responsive messaging app for chatting with friends and meeting new people.`,
-          techStack: [
-            "Node.js",
-            "Express.js",
-            "Socket.io",
-            "MongoDB",
-            "Vue.js"
-          ],
-          logo: "/img/convo-logo.png",
-          logoSize: "70%",
-          complimentaryColor: "#06142E",
-          url: "#",
-          hideProject: true,
-          inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: true,
         },
         {
           name: "Provision Tracker",
@@ -171,11 +142,84 @@ export default {
           url: "https://provisiontracker.com",
           hideProject: false,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
+          name: "RobinMail",
+          jobTitle: "Software Engineer",
+          description: `Designed as a quick and simple solution for Front End Developers that wish to send emails. 
+          Using RobinMail removes the need to create your own mail servers, saving you time. 
+          RobinMail also ensures your destination email stays private and is not visible in your front-end scripts!`,
+          techStack: ["Node.js", "Express.js", "MongoDB", "Nodemailer.js"],
+          logo: "/img/robinmail-logo.png",
+          logoSize: "45%",
+          complimentaryColor: "#BA1A28",
+          url: "https://github.com/Charlie102m/RobinMail",
+          hideProject: false,
+          inDevelopment: false,
+          recentlyUpdated: false,
+        },
+        {
+          name: "Teach Luminous",
+          jobTitle: "Product Development Manager & Software Engineer",
+          description: `Digital teaching resource targeting primary (KS2) and secondary schools. 
+          Styled as a digital magazine, this content managed web app is updated each week with educational videos, quiz's, 
+          exercises and debates which are perfect for the short and typically under reasourced form periods each day. 
+          I fulfilled the role of Product Development Manager for the main build of this site, 
+          whilst also developing a business administration area for Teach Luminous staff to access & manage customer data.`,
+          techStack: [
+            "Node.js",
+            "Express.js",
+            "CosmosDB",
+            "Vue.js",
+            "Bootstrap-Vue",
+          ],
+          logo: "/img/teach-luminous-logo.svg",
+          logoSize: "90%",
+          complimentaryColor: "#3C3C3B",
+          url: "https://teachluminous.com",
+          hideProject: false,
+          inDevelopment: false,
+          recentlyUpdated: false,
+        },
+        {
+          name: "HubSuite",
+          jobTitle: "Software Engineer",
+          description: `A project management tool for software development companies, designed to track development tasks and bugs. 
+          Contains helpdesk ticketing for clients, sprint & task management for the development team and detailed reporting for management.`,
+          techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
+          logo: "/img/HubSuite-logo.png",
+          logoSize: "60%",
+          complimentaryColor: "#018080",
+          url: "https://hubsuite.co.uk",
+          hideProject: true,
+          inDevelopment: false,
+          recentlyUpdated: false,
+        },
+        {
+          name: "Convo",
+          jobTitle: "Software Engineer",
+          description: `Inspired by the chat app utilised in the Channel 4 Hit TV Show "The Circle". 
+          Convo is a simple & fully responsive messaging app for chatting with friends and meeting new people.`,
+          techStack: [
+            "Node.js",
+            "Express.js",
+            "Socket.io",
+            "MongoDB",
+            "Vue.js",
+          ],
+          logo: "/img/convo-logo.png",
+          logoSize: "70%",
+          complimentaryColor: "#06142E",
+          url: "#",
+          hideProject: true,
+          inDevelopment: false,
+          recentlyUpdated: false,
+        },
+
+        {
           name: "Click Happy EYFS",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Interactive educational games and learning resources targeted for EYFS in primary schools. 
           These games are designed for use on the interactive whiteboards, indivdual ipads or desktops - with printable supplentary resources.`,
           techStack: [
@@ -185,7 +229,7 @@ export default {
             "CSS",
             "JavaScript",
             "jQuery",
-            "Bootstrap"
+            "Bootstrap",
           ],
           logo: "/img/click-happy-logo.png",
           logoSize: "70%",
@@ -193,26 +237,11 @@ export default {
           url: "https://click-happy.co.uk",
           hideProject: false,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
-        {
-          name: "The Glazey Place",
-          jobTitle: "Full Stack Developer",
-          description: `Simple yet elegant brochure site for The Gazey Place, a paint your own pottery studio based in Mansfield. 
-          This site was developed mobile first due to the nature of traffic recieved and includes a facebook integration to display their most recent posts.`,
-          techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-          logo: "/img/glazey-place-logo.png",
-          logoSize: "60%",
-          complimentaryColor: "#eee",
-          url: "https://theglazeyplace.co.uk",
-          hideProject: false,
-          inDevelopment: false,
-          recentlyUpdated: false
-        },
-
         {
           name: "Pet Portaits By Katy",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Beautiful photo gallery of an artists pet portrait sketches and other digital artworks. Enables customers to contact the artist and for the admin to manage current commissions.`,
           techStack: ["Express.js", "MongoDB", "Vue.js"],
           logo: "/img/pet-portraits-logo.png",
@@ -221,11 +250,11 @@ export default {
           url: "#",
           hideProject: true,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
           name: "School Report Writer",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `A simple and intuitive web app designed to take the stress out of writing school reports! Targeted at teachers in primary schools, 
           School Report Writer is a modern, efficient solution to a typically tedius & time consuming task.`,
           techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
@@ -235,11 +264,11 @@ export default {
           url: "#",
           hideProject: true,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
           name: "Groupie",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Meetup app allowing people to find local groups & events based on their interests. Whether it be for networking, just socialising or fun you will definately find the group for you.`,
           techStack: ["ASP.NET Core", "MS SQL Server", "Vue.js"],
           logo: "/img/groupie-logo.png",
@@ -248,11 +277,11 @@ export default {
           url: "#",
           hideProject: true,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
           name: "Thought Stream",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Inspired by Twitter, this app encourages users to post their thoughts anonomously in 150 characters or less. 
           Daily site theme cycles update the look & feel of the app, resulting in very different thoughts being posted. 
           Whether they be funny, hard hitting, political or educational, Thought Stream allows it all, no filtering, no holds barred.`,
@@ -263,11 +292,11 @@ export default {
           url: "#",
           hideProject: true,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
           name: "Tiny Tums",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `Mobile first design, this app aids new mums in tracking feeds, naps and bowels of their little bundles of joy. 
           Packed full of advice and guidance, Tiny Tums is a simple solution to help mums stay organised in the chaos of parenting a newborn. `,
           techStack: ["Express.js", "MongoDB", "Vue.js"],
@@ -277,11 +306,11 @@ export default {
           url: "#",
           hideProject: true,
           inDevelopment: false,
-          recentlyUpdated: false
+          recentlyUpdated: false,
         },
         {
           name: "The Weather App",
-          jobTitle: "Full Stack Developer",
+          jobTitle: "Software Engineer",
           description: `A simple experiment with Vue.js, bringing up to date weather information on your chosen location in a beautiful desktop view.`,
           techStack: ["Vue.js"],
           logo: "/img/weather-app-logo.png",
@@ -290,11 +319,11 @@ export default {
           url: "#",
           hideProject: true,
           inDevelopment: false,
-          recentlyUpdated: false
-        }
-      ]
+          recentlyUpdated: false,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
