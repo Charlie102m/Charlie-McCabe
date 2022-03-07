@@ -4,19 +4,20 @@
       <div class="column">
         <div class="thumbnail"></div>
         <h1 class="title">Charlie McCabe</h1>
-        <p class="lead">Software Engineer</p>
+        <p class="lead">Senior Software Engineer</p>
         <p class="small">product development manager</p>
       </div>
       <div class="column">
         <p class="body-text">
           A results-orientated
-          <strong>Full Stack Software Engineer</strong> with a strong commitment
+          <strong>Full-Stack Software Engineer</strong> with a strong commitment
           to delivering scalable, maintainable and user focused software
           solutions.
         </p>
         <p class="body-text">
           Extensive experience in a wide array of web technologies; specializing
-          in .NET 5 microservice development, React JS and TypeScript.
+          in .NET microservice development with event driven architecture, React
+          JS and TypeScript.
         </p>
         <p class="body-text">
           Previous experience as a

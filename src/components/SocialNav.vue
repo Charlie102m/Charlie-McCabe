@@ -3,10 +3,10 @@
     <a href="https://www.facebook.com/charlie101m" target="_blank">
       <font-awesome-icon :icon="['fab', 'facebook-f']" />
     </a>
-    <a href="https://twitter.com/charlie102m" target="_blank">
-      <font-awesome-icon :icon="['fab', 'twitter']" />
-    </a>
-    <a href="https://www.linkedin.com/in/charlie-mccabe-22b340146/" target="_blank">
+    <a
+      href="https://www.linkedin.com/in/charlie-mccabe-22b340146/"
+      target="_blank"
+    >
       <font-awesome-icon :icon="['fab', 'linkedin-in']" />
     </a>
     <a href="https://www.instagram.com/charlie.mccabe/" target="_blank">
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "SocialNav"
+  name: "SocialNav",
 };
 </script>
 

@@ -3,7 +3,7 @@
     <div data-depth="0.1" class="layer">
       <div class="floating-title">
         <h1 class="title">Charlie McCabe</h1>
-        <p class="lead">Software Engineer</p>
+        <p class="lead">Senior Software Engineer</p>
         <p class="small">product development manager</p>
       </div>
     </div>
